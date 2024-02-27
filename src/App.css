@@ -1,38 +1,266 @@
-.App {
-  text-align: center;
+@charset "utf-8";
+/* App.css */
+.App{
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* 헤더영역 */
+.header_in{
+    margin-top: -17px;
+    padding-bottom: 20px;
+    border-bottom: 4px solid #E20000;
+}
+.bannerPhoto{
+    cursor: pointer;
+}
+.logoPhoto{
+    cursor: pointer;
+    margin-left: 320px;
+}
+.loginList ul{
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-right: 360px;
+    display: flex;
+    justify-content: right;
+}
+.loginList li{
+    cursor: pointer;
+    margin-left: 25px;
+    list-style: none;
+}
+.movieList ul{
+    margin-top: -55px;
+    display: flex;
+    justify-content: center;
+}
+.movieList li{
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 50px;
+    list-style: none;
+}
+.movieList li:hover{
+    cursor: pointer;
+    color: #E20000;
+}
+.iconList{
+    margin-top: -65px;
+    margin-right: 360px;
+    display: flex;
+    justify-content: right;
+}
+.iconList p{
+    cursor: pointer;
+    margin-left: 10px;
+}
+.category{
+    margin-top: 20px;
+    margin-left: 57.5%;
+}
+.category button{
+    margin-left: 21px;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    background-color: #fff;
+}
+.category button{
+    cursor: pointer;
+}
+.category button:hover{
+    color: #E20000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* 본문영역 */
+
+.MainList{
+    width: 1250px;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+.MainItem{
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+.MainItem p{
+    cursor: pointer;
+    margin-left: 13px;
+    margin-right: 13px;
+}
+.MainItem button{
+    cursor: pointer;
+}
+.MainItem .ItemTitle{
+    margin-top: -5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.MainItem .ItemGenre{
+    color: #848484;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: -10px;
+}
+.MainItem .Itemhoroscope{
+    margin-top: -7px;
+    color: #525252;
+}
+.MainItem > .Itemhoroscope > span{
+    font-size: 19px;
+    color: #E20000;
+}
+.MainItem button{
+    border-radius: 10px;
+    padding: 7px 13px;
+    font-size: 15px;
+    color: #fff;
+    border: none;
+    background-color: #E20000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* 푸터영역 */
+.Footer{
+    margin-top: 40px;
+    margin-bottom: -10px;
+    background-color: #f1f1f1;
+}
+.footer1 ul{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+}
+.footer1 li{
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: -10px;
+    margin-right: 50px;
+    list-style: none;
+}
+.footer2{
+    padding-top: 10px;
+    padding-bottom: 25px;
+    margin-left: 340px;
+}
+.footer2 p{
+    font-size: 18px;
 }
 
-.App-link {
-  color: #61dafb;
+/* 모달영역 */
+.MainItem{
+    position: relative;
+    width: 20%;
+    padding: 0 5px;
+    box-sizing: border-box;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.MainItem img{
+    width: 100%;
+    height: auto;
+}
+.MainItem .over{
+    position: absolute;
+    width: 85%;
+    height: 57%;
+    top: 20px;
+    bottom: 0;
+    left: 20px;
+    right: 5px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: 0.4s;
+}
+.MainItem:hover .over{
+    opacity: 1;
+}
+.MainItem .over button{
+    position: absolute;
+    padding: 5px 5px;
+    left: 15%;
+    top: 55%;
+    width: 72%;
+    height: 40px;
+    margin-top: -30px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #3f3f3f;
+    background-color: #fff;
+    box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.3);
+}
+.MainItem .modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+}
+.MainItem .modal.show{
+    display: block;
+}
+.MainModal{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    padding: 30px;
+    background-color: #fff;
+}
+.MainModal .title{
+    width: 230px;
+    margin-top: -5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.MainModal .genre{
+    margin-top: -10px;
+    font-size: 15px;
+    color: #8c8c8c;
+}
+.MainModal > .horoscope > span{
+    font-size: 19px;
+    color: #E20000;
+}
+.MainModal .horoscope{
+    margin-top: -7px;
+}
+.MainModal img{
+    width: 100%;
+    height: auto;
+}
+.MainModal01 > .horoscope > span{
+    color: #E20000;
+}
+.MainModal02{
+    margin-top: 4px;
+    margin-left: 20px;
+    width: 560px;
+}
+.MainModal02 p{
+    font-size: 19px;
+    color: #000;
+}
+.MainModal02 .director{
+    font-size: 20px;
+    margin-top: 13px;
+}
+.MainModal02 .actor{
+    font-size: 18px;
+}
+.MainModal02 .plot{
+    font-size: 18px;
+    line-height: 2em;
 }
